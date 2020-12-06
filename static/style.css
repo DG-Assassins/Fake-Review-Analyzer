@@ -1,0 +1,140 @@
+html
+{
+    min-height: 100%;
+}
+body {
+    height: 100%;
+    margin: 0 auto;
+    background: url('../static/pattern.png');
+}
+.container
+{
+    margin-top: 10%;
+}
+
+.btn-primary {
+    color: #212529;
+    background-color: pink;
+    border-color: #5bc2c2
+}
+
+.btn-primary:hover {
+    color: #212529;
+    background-color: white;
+    border-color: #8ad3d3
+}
+input[type="text"]
+{
+    font-size:15px;
+    font-weight: bold;
+}
+label span
+{
+    margin-left: 4px;
+}
+.custom-control-label
+{
+    font-size: 15px;
+    font-weight: bold;
+}
+.custom-control-label::before
+{
+    width: 15px;
+    height: 15px;
+}
+.custom-control-label::after
+{
+    width: 15px;
+    height: 15px;
+}
+
+.output
+{
+    height: 500px;
+    border-radius: 20px;
+    background-color: pink;
+    padding: 30px;
+    overflow-y: auto;
+    margin-top: 20px;
+}
+
+.output-card
+{
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+    border-radius: 15px;
+    padding: 15px;
+    background-color: white;
+}
+
+.output-card-body p
+{
+    font-size: 20px;
+    color: black;
+    /*overflow-wrap: break-word;
+    overflow: hidden;*/
+    /*white-space: nowrap;
+    
+    text-overflow: ellipsis;*/
+    height: auto;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+
+.radio-grp-req
+{
+    border-radius: 20px;
+    width: 300px;
+    height: 40px;
+    background-color: pink;
+    padding-top: 7px;
+}
+
+
+.bubble
+{
+    border-radius: 20px;
+    width: 90px;
+    height: 40px;
+    padding: 6px;
+    background-color: pink;
+    color: black;
+    margin-right: 5px;
+}
+.custom-control-input:checked~.custom-control-label::before
+{
+    background-color: #c3015c;
+    border-color: #c3015c;
+}
+
+.bubble-text
+{
+    display: inline-block;
+    vertical-align: 5px;
+    font-size: 15px;
+}
+.url_bar
+{
+    margin-right: 10px;
+    width: 30rem !important;
+    height: 4.5rem;
+}
+
+.search-btn {
+    margin-left: 5px;
+    font-size: 15px;
+    font-weight: bold;
+    width: 10rem !important;
+    height: 4.5rem;
+    cursor:pointer;
+}
+
+.logo img
+{
+  width: 100rem;
+  height: 20rem;
+}

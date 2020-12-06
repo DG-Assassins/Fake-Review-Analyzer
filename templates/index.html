@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.2/superhero/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">-->
+    <link rel="stylesheet" href="../static/style.css">
+    <title>Fake Review Analyser</title>
+</head>
+<body>
+    <div class="container h-100 d-flex flex-column">
+        <div class="row logo text-center">
+            <div class="col">
+                <img src="../static/logo.png" class="col review_logo"/>
+            </div>
+        </div>
+        
+        <div class="row input">
+            <div class="col">
+                <form id="mainform" action="/result" method="post">
+                    <div class="input-group">
+                        <input id="message" class="form-control border-secondary rounded-pill url_bar" name="url_req" placeholder="Paste your link here" type="text"/>
+                        <span class="input-group-btn"><input class="btn btn-primary search-btn rounded-pill" type="submit" value="Submit"/></span>
+                    </div>
+                    <br>
+                    <div class ="radio-grp-req justify-content-center text-center">
+                        <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" id="customRadioInline1" name="optradio" class="custom-control-input" value="product" style="color:#c3015c" checked>
+                            <label class="custom-control-label" for="customRadioInline1"><span>Product Review</span></label>
+                        </div>
+                        <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" id="customRadioInline2" name="optradio" class="custom-control-input" value="hotel">
+                            <label class="custom-control-label" for="customRadioInline2"><span>Hotel Review</span></label>
+                        </div>
+                    </div>
+                </form>
+            </div>
+          </div>
+          {% if messages %}
+          <div class="container output">
+            {% for i,m in messages %}
+                <div class="row reviews">
+                    <div class="col">
+                        <div class="output-card">
+                            <div class="output-card-body">
+                                <p>{{ m.review_body }}</p>
+                            </div>
+                            <div class="row justify-content-center">
+                                <div class="bubble-grp d-inline-block">
+                                    <div class="bubble d-inline-block">
+                                        <span class="material-icons">flaky</span>
+                                        <div class="bubble-text">{{ m.sentiment }}</div>
+                                    </div>
+                                    <div class="bubble d-inline-block text-center">
+                                        <span class="material-icons">signal_cellular_alt</span>
+                                        <div class="bubble-text">{{ m.authenticity }}</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>   
+                    </div>
+                </div>
+            {% endfor %}
+            </div>
+        {% endif %}
+                
+    </div>
+          
+    </body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</html>
